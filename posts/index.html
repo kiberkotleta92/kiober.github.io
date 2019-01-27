@@ -20,7 +20,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 		<title>
-				Posts &middot; Кирюша Денисов
+				Emboss &middot; Кирюша Денисов
 		</title>
 	
 		
@@ -33,7 +33,7 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 	
 		
-		<link href="https://kirilldenisov.github.io/posts/index.xml" rel="alternate" type="application/rss+xml" title="Кирюша Денисов" />
+		<link href="" rel="alternate" type="application/rss+xml" title="Кирюша Денисов" />
 	</head>
 	
     <body>
@@ -52,47 +52,53 @@
         
 
 <main>
-	<div class="catalogue">
-		
-			<a href="https://kirilldenisov.github.io/posts/" class="catalogue-item">
-    <div>
-        <time datetime="2019-01-26 13:01:22 &#43;0300 MSK" class="catalogue-time">26 января 2019</time>
-        <h1 class="catalogue-title">Emboss</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-            В решениях используется Python версии 3.6.6, модуль Biopython версии 1.72 и пакет EMBOSS версии 6.6.0.0
-Упражнения в командной строке  Несколько файлов в формате fasta собрать в единый файл.  Исходные файлы
-Команда
-cat 1/*.fasta &gt; result1.fasta  Результат
- Один файл в формате fasta с несколькими последовательностями разделить на отдельные fasta файлы.  Исходные файлы
-Команда
-from Bio import SeqIO f_open = open('2.fasta', 'rt') for rec in SeqIO.parse(f_open, 'fasta'): name = rec.
-        </p>
-    </div>
-</a>
+	<div class="post">
+		<div class="post-info">
+    <span> </span>
+        
+        <br>
+        <span> &nbsp;</span><time datetime="2019-01-26 13:01:22 &#43;0300 MSK">26 января 2019</time>
+</div>
+		<h1 class="post-title">Emboss</h1>
+<div class="post-line"></div>
 
 		
-	</div>
-	
-	<div class="pagination">
+
 		
-		
-	
-		<span>1</span>
-	</div>
-</main>
 
+<p>В решениях используется Python версии 3.6.6, модуль Biopython версии 1.72 и пакет EMBOSS версии 6.6.0.0</p>
 
-        		<footer>
-			<span>
-			&copy; <time datetime="2019-01-27 03:29:26.316506 &#43;0300 MSK m=&#43;0.227153174">2019</time> Кирюша. Сделано с <a href='https://gohugo.io'>Hugo</a>.
-			</span>
-		</footer>
+<h2 id="упражнения-в-командной-строке">Упражнения в командной строке</h2>
 
-    </body>
-</html>
-.seq}')
+<ol>
+<li>Несколько файлов в формате fasta собрать в единый файл.</li>
+</ol>
+
+<p><a href="term3/emboss/1/">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">cat 1/*.fasta &gt; result1.fasta
+</code></pre>
+
+<p><a href="term3/emboss/result1.fasta">Результат</a></p>
+
+<ol>
+<li>Один файл в формате fasta с несколькими последовательностями разделить на отдельные fasta файлы.</li>
+</ol>
+
+<p><a href="term3/emboss/2/2.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-python">from Bio import SeqIO
+
+f_open = open('2.fasta', 'rt')
+
+for rec in SeqIO.parse(f_open, 'fasta'):
+    name = rec.id + '.fasta'
+    with open(name, 'wt') as result_file:
+        result_file.write(f'&gt;{rec.description}\n{rec.seq}')
 
 f_open.close()
 </code></pre>
@@ -274,6 +280,7 @@ fasta.close()
 	</div>
 
 	<div class="pagination">
+		<a href="/posts/test/" class="right arrow">&#8594;</a>
 
 		<a href="#" class="top">Top</a>
 	</div>
@@ -282,7 +289,7 @@ fasta.close()
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-27 03:29:26.316727 &#43;0300 MSK m=&#43;0.227374819">2019</time> Кирюша. Сделано с <a href='https://gohugo.io'>Hugo</a>.
+			&copy; <time datetime="2019-01-27 03:31:42.734986 &#43;0300 MSK m=&#43;0.199811813">2019</time> Кирюша. Сделано с <a href='https://gohugo.io'>Hugo</a>.
 			</span>
 		</footer>
 
