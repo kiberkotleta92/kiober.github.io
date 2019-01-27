@@ -59,6 +59,25 @@
 
 	<div class="catalogue">
 		
+			<a href="https://kirilldenisov.github.io/posts/" class="catalogue-item">
+    <div>
+        <time datetime="2019-01-26 13:01:22 &#43;0300 MSK" class="catalogue-time">26 января 2019</time>
+        <h1 class="catalogue-title">Emboss</h1>
+        <div class="catalogue-line"></div>
+
+        <p>
+            В решениях используется Python версии 3.6.6, модуль Biopython версии 1.72 и пакет EMBOSS версии 6.6.0.0
+Упражнения в командной строке  Несколько файлов в формате fasta собрать в единый файл.  Исходные файлы
+Команда
+cat 1/*.fasta &gt; result1.fasta  Результат
+ Один файл в формате fasta с несколькими последовательностями разделить на отдельные fasta файлы.  Исходные файлы
+Команда
+from Bio import SeqIO f_open = open('2.fasta', 'rt') for rec in SeqIO.parse(f_open, 'fasta'): name = rec.
+        </p>
+    </div>
+</a>
+
+		
 	</div>
 	
 	<div class="pagination">
@@ -72,7 +91,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-27 03:02:22.731231 &#43;0300 MSK m=&#43;0.220907598">2019</time> Кирюша. Сделано с <a href='https://gohugo.io'>Hugo</a>.
+			&copy; <time datetime="2019-01-27 03:05:14.715921 &#43;0300 MSK m=&#43;0.273441947">2019</time> Кирюша. Сделано с <a href='https://gohugo.io'>Hugo</a>.
 			</span>
 		</footer>
 

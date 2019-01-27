@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+		
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(52080957, "init", {
+        id:52080957,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/52080957" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>
+				Emboss &middot; Кирюша Денисов
+		</title>
+	
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+	
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Кирюша Денисов" />
+	</head>
+	
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Кирюша Денисов</h2>
+				</a>
+				<ul>
+    <li><a href="/about">Обо мне</a></li>
+    <li><a href="/">Статьи</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span> </span>
+        
+        <br>
+        <span> &nbsp;</span><time datetime="2019-01-26 13:01:22 &#43;0300 MSK">26 января 2019</time>
+</div>
+		<h1 class="post-title">Emboss</h1>
+<div class="post-line"></div>
+
+		
+
+		
+
+<p>В решениях используется Python версии 3.6.6, модуль Biopython версии 1.72 и пакет EMBOSS версии 6.6.0.0</p>
+
+<h2 id="упражнения-в-командной-строке">Упражнения в командной строке</h2>
+
+<ol>
+<li>Несколько файлов в формате fasta собрать в единый файл.</li>
+</ol>
+
+<p><a href="term3/emboss/1/">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">cat 1/*.fasta &gt; result1.fasta
+</code></pre>
+
+<p><a href="term3/emboss/result1.fasta">Результат</a></p>
+
+<ol>
+<li>Один файл в формате fasta с несколькими последовательностями разделить на отдельные fasta файлы.</li>
+</ol>
+
+<p><a href="term3/emboss/2/2.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-python">from Bio import SeqIO
+
+f_open = open('2.fasta', 'rt')
+
+for rec in SeqIO.parse(f_open, 'fasta'):
+    name = rec.id + '.fasta'
+    with open(name, 'wt') as result_file:
+        result_file.write(f'&gt;{rec.description}\n{rec.seq}')
+
+f_open.close()
+</code></pre>
+
+<p><a href="term3/emboss/2/result2/">Результат</a></p>
+
+<ol>
+<li>Транслировать кодирующие последовательности, лежащие в одном fasta файле, в аминокислотные, используя указанную таблицу генетического кода, и положить результат в один fasta файл.</li>
+</ol>
+
+<p><a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?chapter=tgencodes#SG1">Таблица генетического кода</a></p>
+
+<p><a href="term3/emboss/3/3.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-python">from Bio import SeqIO
+
+with open('3.fasta', 'rt') as f_open, open('result3.fasta', 'wt') as result:
+    for rec in SeqIO.parse(f_open, 'fasta'):
+        result.write(f'&gt;{rec.description}\n{rec.seq.translate(table=&quot;1&quot;)}')
+
+</code></pre>
+
+<p><a href="term3/emboss/3/result3.fasta">Результат</a></p>
+
+<ol>
+<li>Вывести открытые рамки длиной не менее 100, имеющиеся в данной нуклеотидной последовательности.</li>
+</ol>
+
+<p><a href="term3/emboss/5/5.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">getorf 5.fasta -minsize 100
+</code></pre>
+
+<p><a href="term3/emboss/5/5.orf">Результат</a></p>
+
+<ol>
+<li>Перевести выравнивание из формата fasta в формат msf.</li>
+</ol>
+
+<p><a href="term3/emboss/6/6.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">aligncopy 6.fasta -aformat msf
+</code></pre>
+
+<p><a href="term3/emboss/6/6.aligncopy">Результат</a></p>
+
+<ol>
+<li>Выдать в файл число совпадающих букв между второй последовательностью выравнивания и всеми остальными.</li>
+</ol>
+
+<p><a href="term3/emboss/7/7.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">infoalign 7.fasta -refseq 2 -outfile 7.txt -only -name -idcount
+</code></pre>
+
+<p><a href="term3/emboss/7/7.txt">Результат</a></p>
+
+<ol>
+<li>Перемешать буквы в данной нуклеотидной последовательности.</li>
+</ol>
+
+<p><a href="term3/emboss/10/10.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">shuffleseq 10.fasta result10.fasta
+</code></pre>
+
+<p><a href="term3/emboss/10/result10.fasta">Результат</a></p>
+
+<ol>
+<li>Создать три случайных нуклеотидных последовательностей длины 100.</li>
+</ol>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">makenucseq -length 100 -amount 3 -outseq result11.fasta
+</code></pre>
+
+<p><a href="term3/emboss/11/result11.fasta">Результат</a></p>
+
+<ol>
+<li>Удалить символы гэпов из выравнивания</li>
+</ol>
+
+<p><a href="term3/emboss/14/14.fasta">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-bash">degapseq 14.fasta result14.fasta
+</code></pre>
+
+<p><a href="term3/emboss/14/result14.fasta">Результат</a></p>
+
+<ol>
+<li>Файл с ридами sra_data.fastq в формате fastq перевести в формат fasta.</li>
+</ol>
+
+<p><a href="term3/emboss/sra_data.fastq">Исходные файлы</a></p>
+
+<p>Команда</p>
+
+<pre><code class="language-python">from Bio import SeqIO
+
+with open('result16.fasta', 'wt') as fasta, open('sra_data.fastq', 'rt') as fastq:
+  SeqIO.convert(fastq, 'fastq', fasta, 'fasta')
+</code></pre>
+
+<p><a href="term3/emboss/result16.fasta">Результат</a></p>
+
+<h2 id="конверция-файла-genbank-embl-в-fasta-формат">Конверция файла GenBank/embl в FASTA формат</h2>
+
+<h4 id="задача">Задача</h4>
+
+<p>По данному аннотированному файлу в формате GenBank или embl (из ENA) создать файл с кодирующими последовательностями в формате fasta, с функцией белка в описании.</p>
+
+<h4 id="решение">Решение</h4>
+
+<p><a href="term3/emboss/2.4/gb_to_fasta.py">Скачать скрипт</a></p>
+
+<pre><code class="language-python">#!/usr/bin/env python3
+
+# Converts sequences from genbank or embl as fasta sequences
+# Takes input file as first argument
+
+from sys import argv
+from Bio import SeqIO
+
+gb_filename = argv[1]
+fasta_filename = gb_filename + '.fasta'
+genbank = open(gb_filename, &quot;rt&quot;)
+fasta = open(fasta_filename, &quot;wt&quot;)
+
+with open(gb_filename, &quot;rt&quot;) as lines:
+    firstline = lines.readline().split()[0]
+    if firstline == 'LOCUS':
+        fileformat = 'genbank'
+    elif firstline == 'ID':
+        fileformat = 'embl'
+
+for record in SeqIO.parse(genbank, fileformat):
+    for feature in record.features:
+        if feature.type == 'CDS':
+            fasta.write('&gt;{id} {product}\n{sequence}\n'.format(
+                        id=feature.qualifiers.get('protein_id')[0],
+                        product=feature.qualifiers.get('product')[0],
+                        sequence=feature.extract(record.seq)))
+
+genbank.close()
+fasta.close()
+</code></pre>
+
+<h4 id="описание-решения">Описание решения</h4>
+
+<p>Для выходного файла используется название входного файла, к которому добавлено расширение <em>.fasta</em>.</p>
+
+<p>По первой строке входного файла определяется формат (embl или GenBank).</p>
+
+<p>Из каждой записи кодирующих последовательностей выделяются: ID и функция закодированного белка и нуклеотидная последовательность.</p>
+
+<p>Выходной файл конструирутется по принципу: идентификатор последовательности - ID закодированного белка, описание последовательности - функция закодированного белка.</p>
+
+<h4 id="пример-работы">Пример работы</h4>
+
+<p><a href="term3/emboss/2.4/source">Исходные файлы</a></p>
+
+<p><a href="term3/emboss/2.4/result">Результат</a></p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-01-27 03:05:14.714505 &#43;0300 MSK m=&#43;0.272025517">2019</time> Кирюша. Сделано с <a href='https://gohugo.io'>Hugo</a>.
+			</span>
+		</footer>
+
+    </body>
+</html>
