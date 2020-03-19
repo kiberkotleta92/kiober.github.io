@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Кирюша Денисов</title>
@@ -6,34 +6,9 @@
     <description>Recent content on Кирюша Денисов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Sun, 27 Jan 2019 03:13:49 +0300</lastBuildDate>
     
 	<atom:link href="https://kirilldenisov.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Test</title>
-      <link>https://kirilldenisov.github.io/posts/test/</link>
-      <pubDate>Sun, 27 Jan 2019 03:13:49 +0300</pubDate>
-      
-      <guid>https://kirilldenisov.github.io/posts/test/</guid>
-      <description> Test </description>
-    </item>
-    
-    <item>
-      <title>Emboss</title>
-      <link>https://kirilldenisov.github.io/posts/</link>
-      <pubDate>Sat, 26 Jan 2019 13:01:22 +0300</pubDate>
-      
-      <guid>https://kirilldenisov.github.io/posts/</guid>
-      <description>В решениях используется Python версии 3.6.6, модуль Biopython версии 1.72 и пакет EMBOSS версии 6.6.0.0
-Упражнения в командной строке  Несколько файлов в формате fasta собрать в единый файл.  Исходные файлы
-Команда
-cat 1/*.fasta &amp;gt; result1.fasta  Результат
- Один файл в формате fasta с несколькими последовательностями разделить на отдельные fasta файлы.  Исходные файлы
-Команда
-from Bio import SeqIO f_open = open(&#39;2.fasta&#39;, &#39;rt&#39;) for rec in SeqIO.parse(f_open, &#39;fasta&#39;): name = rec.</description>
-    </item>
     
   </channel>
 </rss>
