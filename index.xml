@@ -22,9 +22,11 @@
 Совсем не официально и быстро: vk
 Образование МГУ имени М.В.Ломоносова `23
 Факультет биоинжинерии и биоинформатики
-Навыки   Python (numpy, pandas, biopython)
-  Golang
-  R (tidyverse)
+Навыки   Python
+ pandas numpy seaborn biopython jupyter (ipython)    R
+ tidyverse rmarkdown    Golang
+  git, linux, conda
+  hisat2, bedtools, EMBOSS
   Проекты  rndm - программа коммандной строки, использующая RANDOM.ORG JSON-RPC API Jester - телеграм бот на golang Учебный сайт - отчеты для курса практической биоинформатики, сделано на Rmarkdown  Соревновательное программирование  Rosalind  Сертификаты  Stepic  Основы статистики    </description>
     </item>
     
