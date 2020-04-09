@@ -25,9 +25,9 @@
 Навыки   Python
  pandas numpy seaborn biopython jupyter (ipython)    R
  tidyverse rmarkdown    Golang
-  git, linux, conda
+  git, linux, docker, conda
   hisat2, bedtools, EMBOSS
-  Проекты  rndm - программа коммандной строки, использующая RANDOM.ORG JSON-RPC API Jester - телеграм бот на golang Учебный сайт - отчеты для курса практической биоинформатики, сделано на Rmarkdown  Соревновательное программирование  Rosalind  Сертификаты  Stepic  Основы статистики    </description>
+  Проекты  rndm - программа коммандной строки, использующая RANDOM.</description>
     </item>
     
   </channel>
