@@ -6,7 +6,7 @@
     <description>Recent content on Кирюша Денисов</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Thu, 02 Apr 2020 16:21:47 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2020 16:21:47 +0300</lastBuildDate>
     
 	<atom:link href="https://kirilldenisov.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Обо мне</title>
       <link>https://kirilldenisov.github.io/about/</link>
-      <pubDate>Thu, 02 Apr 2020 16:21:47 +0300</pubDate>
+      <pubDate>Fri, 15 May 2020 16:21:47 +0300</pubDate>
       
       <guid>https://kirilldenisov.github.io/about/</guid>
       <description>Связаться Очень официально и долго: kirill.denisov700@gmail.com
@@ -27,7 +27,7 @@
  tidyverse rmarkdown    Golang
   git, linux, docker, conda
   hisat2, bedtools, EMBOSS
-  Проекты  rndm - программа коммандной строки, использующая RANDOM.</description>
+  Проекты  Видеозвонок для Авито в рамках Школы будущих CTO презентация проекта, демонстрация работы kijutsushiapp - сервер выделяющий текст из видео и программа командной строки для взаимодействия с ним rndm - программа коммандной строки, использующая RANDOM.</description>
     </item>
     
   </channel>
